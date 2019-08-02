@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": ["warn", {
+      "code": 100,
+      "ignoreComments": true,
+      "ignoreStrings": true,
+      "ignorePattern": "d=([s]*?)",
+    }],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 1 }],
+    "no-param-reassign": "off"
+  }
+}
