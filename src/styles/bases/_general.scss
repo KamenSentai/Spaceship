@@ -11,5 +11,12 @@ body {
 }
 
 body {
+  display: flex;
   overflow: hidden;
+  perspective: 750px;
+  cursor: grab;
+
+  &.isGrabbing {
+    cursor: grabbing;
+  }
 }

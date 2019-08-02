@@ -76,7 +76,7 @@ class Space {
 
       context.clearRect(0, 0, width, height)
 
-      stars.forEach(star => {
+      stars.forEach((star) => {
         const { x, y, z } = star
 
         context.beginPath()
