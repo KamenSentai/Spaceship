@@ -2,11 +2,16 @@
  * @author Alain Cao Van Tuong <contact@alain-caovantruong.fr>
  */
 
+/* Definition */
+
 /**
  * @class Grabber
  */
-
 class Grabber {
+  /**
+   * Construct
+   * @param {String} element
+   */
   constructor(element) {
     this.element = document.querySelector(element)
     this.isGrabbing = false
@@ -20,6 +25,9 @@ class Grabber {
     }
   }
 
+  /**
+   * Initialiaze
+   */
   init() {
     const { scale, rotate } = this
     const RAD = Math.PI / 180
@@ -55,6 +63,9 @@ class Grabber {
     })
   }
 
+  /**
+   * Update transform
+   */
   update() {
     const { element, scale, rotate } = this
 
@@ -66,5 +77,7 @@ class Grabber {
     `
   }
 }
+
+/* Export */
 
 export default Grabber
