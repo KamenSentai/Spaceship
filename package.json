@@ -1,5 +1,5 @@
 {
-  "name": "starship",
+  "name": "spaceship",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KamenSentai/Starship.git"
+    "url": "git+https://github.com/KamenSentai/Spaceship.git"
   },
   "keywords": [],
   "author": "Alain Cao Van Truong <contact@alain-caovantruong.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KamenSentai/Starship/issues"
+    "url": "https://github.com/KamenSentai/Spaceship/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
