@@ -1,12 +1,13 @@
-$size: 250px;
+$sizeSpaceship: 250px;
 $angleFuselageSide: 14deg;
 $angleFuselageBack: 8deg;
 $angleWing: 30deg;
 $heightBack: 219px;
 $widthBack: 121px;
-$engineRadius: 125px;
-$engineSegment: $engineRadius / 10;
-$totalEngineSegment: 16;
+$sizeBasement: 25px;
+$radiusEngine: 125px;
+$sizeSegments: $radiusEngine / 10;
+$totalEngineSegments: 16;
 $engineGradient: linear-gradient(
   to bottom,
   hsl(0, 100%, 50%) 0%,
@@ -41,7 +42,7 @@ $engineGradient: linear-gradient(
   hsl(0, 100%, 50.64%) 95.95%,
   hsl(0, 100%, 50%) 100%
 );
-$wallHeights: (
+$heightsWalls: (
   a: 15px,
   b: 13px,
   c: 11px,

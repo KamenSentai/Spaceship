@@ -1,0 +1,124 @@
+.basement {
+  $root: &;
+
+  position: absolute;
+  top: calc(#{$sizeSpaceship} - #{$sizeBasement});
+  transform-style: preserve-3d;
+
+  &--left,
+  &--right {
+    #{$root}__bloc {
+      height: $sizeBasement;
+      width: $sizeBasement * 5;
+      transform-origin: 0 0;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      &::before {
+        background-color: darken(white, 10%);
+      }
+
+      &::after {
+        transform-origin: 100% 0;
+      }
+    }
+  }
+
+  &--left {
+    #{$root}__bloc {
+      transform: scale(-1) rotateY(#{$angleWing}) rotateX(90deg);
+
+      &::before {
+        transform: translateZ(-#{$sizeBasement * 5})
+      }
+
+      &::after {
+        transform: rotateY(-90deg);
+        background-color: darken(white, 20%);
+      }
+    }
+
+    #{$root}__roof {
+      background-color: darken(white, 15%);
+      transform: rotateX(-90deg) translateZ(#{$sizeBasement});
+    }
+  }
+
+  &--right {
+    #{$root}__bloc {
+      transform: scale(1) rotateY(#{$angleWing}) rotateX(90deg);
+
+      &::before {
+        transform: translateZ(#{$sizeBasement * 5})
+      }
+
+      &::after {
+        transform: rotateY(90deg);
+        background-color: darken(white, 5%);
+      }
+    }
+
+    #{$root}__roof {
+      background-color: darken(white, 0);
+      transform: rotateX(90deg) translateZ(-#{$sizeBasement});
+    }
+  }
+
+  &--center {
+    $x: 13px;
+    $y: 21.5px;
+    left: -$x;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 0 $x $y $x;
+    border-color: transparent transparent darken(white, 10%) transparent;
+    transform-origin: 50% 0;;
+    transform: rotateX(90deg);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: -$x;
+    }
+
+    &::before {
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 0 $x $y $x;
+      border-color: transparent transparent darken(white, 10%) transparent;
+      transform: translateZ(#{$sizeBasement * 5})
+    }
+
+    &::after {
+      top: $y;
+      height: $sizeBasement * 5;
+      width: $x * 2;
+      background-color: darken(white, 5%);
+      transform-origin: 50% 0;
+      transform: rotateX(90deg);
+    }
+  }
+
+  &__bloc {
+    position: relative;
+    transform-style: preserve-3d;
+    background-color: darken(white, 10%);
+  }
+
+  &__roof {
+    position: absolute;
+    width: $sizeBasement * 5;
+    height: $sizeBasement * 5;
+    transform-origin: 0 0;
+    transform-style: preserve-3d;
+  }
+}
