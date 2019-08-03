@@ -1,1 +1,1 @@
-# Starship made with HTML/CSS/JS
+# Spaceship made with HTML/CSS/JS
