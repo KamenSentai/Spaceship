@@ -7,17 +7,20 @@
  */
 
 class Grabber {
-  constructor() {
+  constructor(element) {
+    this.element = document.querySelector(element)
     this.isGrabbing = false
+    this.rotate = {
+      x: 0,
+      y: 0,
+      z: 0,
+    }
   }
 
   init() {
-    const starship = document.querySelector('.starship')
+    const { element, rotate } = this
 
-    const rotate = {
-      x: 0,
-      y: 0,
-    }
+    const RAD = Math.PI / 180
 
     window.addEventListener('mousedown', () => {
       this.isGrabbing = true
@@ -34,9 +37,14 @@ class Grabber {
         const { movementX, movementY } = event
 
         rotate.x -= movementY
-        rotate.y += movementX
+        rotate.y += movementX * Math.cos(rotate.x * RAD)
+        rotate.z -= movementX * Math.sin(rotate.x * RAD) * Math.cos(rotate.y * RAD)
 
-        starship.style.transform = `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`
+        element.style.transform = `
+          rotateX(${rotate.x}deg)
+          rotateY(${rotate.y}deg)
+          rotateZ(${rotate.z}deg)
+        `
       }
     })
   }
