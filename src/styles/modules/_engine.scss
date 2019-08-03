@@ -6,9 +6,9 @@
 
   &--left,
   &--right {
-    @each $index in $wallHeights {
+    @each $index in $heightsWalls {
       #{$root}__segment {
-        &:nth-child(#{index($wallHeights, $index)}) {
+        &:nth-child(#{index($heightsWalls, $index)}) {
           @include ba {
             height: 8px;
           }
@@ -20,7 +20,7 @@
   &--left{
     transform:
       scale(.5)
-      translate3d(-#{$engineRadius * 2}, 0, -10px)
+      translate3d(-#{$radiusEngine * 2}, 0, -10px)
       rotateY(-#{$angleFuselageBack / 2})
     ;
   }
@@ -28,15 +28,15 @@
   &--right{
     transform:
       scale(.5)
-      translate3d(#{$engineRadius * 2}, 0, -10px)
+      translate3d(#{$radiusEngine * 2}, 0, -10px)
       rotateY(#{$angleFuselageBack / 2})
     ;
   }
 
   &--center {
     #{$root}__segment {
-      @each $index, $height in $wallHeights {
-        &:nth-child(#{index($wallHeights, $index $height)}) {
+      @each $index, $height in $heightsWalls {
+        &:nth-child(#{index($heightsWalls, $index $height)}) {
           @include ba {
             height: $height;
           }
@@ -47,17 +47,17 @@
 
   &__segment {
     position: absolute;
-    top: -$engineRadius / 2;
-    left: -$engineSegment / 2;
-    height: $engineRadius;
-    width: $engineSegment;
+    top: -$radiusEngine / 2;
+    left: -$sizeSegments / 2;
+    height: $radiusEngine;
+    width: $sizeSegments;
     background: $engineGradient;
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
 
-    @for $i from 0 to $totalEngineSegment {
+    @for $i from 0 to $totalEngineSegments {
       &:nth-child(#{$i}) {
-        transform: rotateZ(#{$i / ($totalEngineSegment * 2)}turn);
+        transform: rotateZ(#{$i / ($totalEngineSegments * 2)}turn);
       }
     }
 
