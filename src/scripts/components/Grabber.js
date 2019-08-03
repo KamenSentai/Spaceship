@@ -10,6 +10,9 @@ class Grabber {
   constructor(element) {
     this.element = document.querySelector(element)
     this.isGrabbing = false
+    this.scale = {
+      g: 1,
+    }
     this.rotate = {
       x: 0,
       y: 0,
@@ -18,9 +21,16 @@ class Grabber {
   }
 
   init() {
-    const { element, rotate } = this
-
+    const { scale, rotate } = this
     const RAD = Math.PI / 180
+
+    window.addEventListener('wheel', (event) => {
+      const { deltaY } = event
+
+      scale.g = Math.max(0.01, Math.min(5, scale.g + deltaY / 1000))
+
+      this.update()
+    })
 
     window.addEventListener('mousedown', () => {
       this.isGrabbing = true
@@ -40,13 +50,20 @@ class Grabber {
         rotate.y += movementX * Math.cos(rotate.x * RAD)
         rotate.z -= movementX * Math.sin(rotate.x * RAD) * Math.cos(rotate.y * RAD)
 
-        element.style.transform = `
-          rotateX(${rotate.x}deg)
-          rotateY(${rotate.y}deg)
-          rotateZ(${rotate.z}deg)
-        `
+        this.update()
       }
     })
+  }
+
+  update() {
+    const { element, scale, rotate } = this
+
+    element.style.transform = `
+      scale(${scale.g})
+      rotateX(${rotate.x}deg)
+      rotateY(${rotate.y}deg)
+      rotateZ(${rotate.z}deg)
+    `
   }
 }
 
