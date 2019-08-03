@@ -2,10 +2,15 @@
  * @author Alain Cao Van Tuong <contact@alain-caovantruong.fr>
  */
 
+ /* Definition */
+
 /**
  * @class Space
  */
 class Space {
+  /**
+   * Construct
+   */
   constructor() {
     this.canvas = document.querySelector('canvas')
     this.context = this.canvas.getContext('2d')
@@ -15,6 +20,9 @@ class Space {
     }
   }
 
+  /**
+   * Initialize
+   */
   init() {
     this.resizeCanvas()
     this.mouseMove()
@@ -33,6 +41,9 @@ class Space {
     window.addEventListener('resize', resize)
   }
 
+  /**
+   * Listen mouse move
+   */
   mouseMove() {
     const { canvas } = this
 
@@ -48,6 +59,9 @@ class Space {
     window.addEventListener('mousemove', move)
   }
 
+  /**
+   * Draw canvas
+   */
   drawSpace() {
     const { canvas, context } = this
 
@@ -93,5 +107,7 @@ class Space {
     loop()
   }
 }
+
+/* Export */
 
 export default Space
