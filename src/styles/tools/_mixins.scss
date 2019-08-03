@@ -1,0 +1,6 @@
+@mixin ba() {
+  &::before,
+  &::after {
+    @content;
+  }
+}
