@@ -1,0 +1,38 @@
+.fire {
+  position: absolute;
+  transform-origin: 0 0;
+  transform: translateZ(-#{$distanceFire}) rotateY(90deg) skewX(45deg);
+
+  &--left,
+  &--right {
+    transform: translateZ(-#{$distanceFire}) rotateY(90deg) skewX(22.5deg);
+  }
+
+  &__flame {
+    position: absolute;
+    background: $gradientFire;
+    opacity: .5;
+    transform: translateX(0);
+    will-change: transform;
+
+    @each $index, $height in $heightsFires {
+      &:nth-child(#{index($heightsFires, $index $height)}) {
+        height: $height;
+        width: $height * 2;
+        animation: flaming #{index($heightsFires, $index $height) * .125s} ease-in-out infinite;
+      }
+    }
+
+    @keyframes flaming {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+}

@@ -4,66 +4,71 @@
   position: absolute;
   top: calc(#{$sizeSpaceship} - #{$sizeBasement});
 
-  &--left,
-  &--right {
-    height: $sizeBasement;
-    width: $sizeBasement * 5;
-    transform-origin: 0 50%;
+  &__part {
+    position: absolute;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      transform-origin: 0 0;
-    }
+    &--left,
+    &--right {
+      height: $sizeBasement;
+      width: $sizeBasement * 5;
+      transform-origin: 0 50%;
 
-    &::before {
-      background-color: darken(white, 7.5%);
-      transform: skewX(-#{$angleWing});
-    }
-
-    &::after {
-      background-color: darken(white, 2.5%);
-    }
-  }
-
-  &--left {
-    transform: scale(-1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
-
-    &::after {
-      transform: skewX(-#{$angleWing}) translateZ(-#{$sizeBasement * 5});
-    }
-
-    #{$root}__closure {
-      background-color: darken(white, 10%);
-      transform: rotateY(-90deg) rotateX(#{$angleWing});
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-origin: 0 0;
+      }
 
       &::before {
+        background-color: darken(white, 7.5%);
+        transform: skewX(-#{$angleWing});
+      }
+
+      &::after {
+        background-color: darken(white, 2.5%);
+      }
+    }
+
+    &--left {
+      transform: scale(-1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+
+      &::after {
+        transform: skewX(-#{$angleWing}) translateZ(-#{$sizeBasement * 5});
+      }
+
+      #{$root}__closure {
+        background-color: darken(white, 10%);
+        transform: rotateY(-90deg) rotateX(#{$angleWing});
+
+        &::before {
+          background-color: darken(white, 5%);
+          transform: rotateX(#{$angleWing * 2});
+        }
+      }
+    }
+
+    &--right {
+      transform: scale(1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+
+      &::after {
+        transform: skewX(-#{$angleWing}) translateZ(#{$sizeBasement * 5});
+      }
+
+      #{$root}__closure {
         background-color: darken(white, 5%);
-        transform: rotateX(#{$angleWing * 2});
+        transform: rotateY(90deg) rotateX(-#{$angleWing});
+
+        &::before {
+          background-color: darken(white, 0%);
+          transform: rotateX(-#{$angleWing * 2});
+        }
       }
     }
   }
 
-  &--right {
-    transform: scale(1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
-
-    &::after {
-      transform: skewX(-#{$angleWing}) translateZ(#{$sizeBasement * 5});
-    }
-
-    #{$root}__closure {
-      background-color: darken(white, 5%);
-      transform: rotateY(90deg) rotateX(-#{$angleWing});
-
-      &::before {
-        background-color: darken(white, 0%);
-        transform: rotateX(-#{$angleWing * 2});
-      }
-    }
-  }
 
   &__closure {
     position: absolute;

@@ -50,7 +50,7 @@
     left: -$sizeSegments / 2;
     height: $radiusEngine;
     width: $sizeSegments;
-    background: $engineGradient;
+    background: $gradientEngine;
     transform-origin: 50% 50%;
 
     @for $i from 0 to $totalEngineSegments {
