@@ -1,0 +1,26 @@
+html {
+  background-color: black;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  perspective: 750px;
+  cursor: grab;
+
+  &.isGrabbing {
+    cursor: grabbing;
+  }
+}
+
+*  {
+  transform-style: preserve-3d;
+}

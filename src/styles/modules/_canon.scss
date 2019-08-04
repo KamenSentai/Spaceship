@@ -1,0 +1,62 @@
+.canon {
+  position: absolute;
+  height: $radiusCanon;
+  width: $radiusCanon;
+  border-radius: 100%;
+  border: $sizeMuzzle solid darken($color, 50%);
+  transform-origin: 0 0;
+  transform:
+    rotateX(#{$angleFuselageSide + 90deg})
+    translateX(-#{$sizeCanonSegments / 2 + $radiusCanon / 2})
+    translateY(-#{$radiusCanon})
+    translateZ(#{$radiusCanon * 2.5})
+  ;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12.5%;
+    left: -12.5%;
+    height: 125%;
+    width: 125%;
+    border-radius: 100%;
+    background-color: darken($color, 50%);
+    transform: translateZ(-#{$radiusCanon * 6.25});
+  }
+
+  &__segment {
+    position: absolute;
+    top: -$sizeMuzzle;
+    left: $radiusCanon / 2 - $sizeMuzzle;
+    height: $radiusCanon + $sizeMuzzle * 2;
+    width: $sizeCanonSegments + $sizeMuzzle * 2;
+
+    @for $i from 0 to $totalSegments {
+      &:nth-child(#{$i}) {
+        transform: rotateZ(#{$i / ($totalSegments * 2)}turn);
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: $radiusCanon * 6.25;
+      width: 100%;
+      background-color: darken($color, 25%);
+      transform-origin: 0 0;
+    }
+
+    &::before {
+      top: 100%;
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0%;
+    }
+
+    &::after {
+      bottom: 100%;
+      transform: rotateX(90deg);
+      transform-origin: 50% 100%;
+    }
+  }
+}

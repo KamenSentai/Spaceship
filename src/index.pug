@@ -1,0 +1,46 @@
+- const SIDES = ['left', 'right']
+- const SEGMENTS = 16
+- const FLAMES = 5
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Spaceship
+  body
+    canvas
+    .area
+      .spaceship
+        .fuselage.fuselage--top
+          .basement
+            each side in SIDES
+              .basement__part(class=`basement__part--${side}`)
+                .basement__closure
+                .basement__cockpit
+        .fuselage.fuselage--bottom
+          .canon
+            - for (let i = 0; i < SEGMENTS; ++i)
+              .canon__segment
+            .laser
+              - for (let i = 0; i < SEGMENTS; ++i)
+                .laser__segment
+        .fuselage.fuselage--back
+          .engine.engine--center
+            - for (let i = 0; i < SEGMENTS; ++i)
+              .engine__segment
+            .fire
+              - for (let i = 0; i < FLAMES; ++i)
+                .fire__flame
+          .engine.engine--left
+            - for (let i = 0; i < SEGMENTS; ++i)
+              .engine__segment
+            .fire.fire--left
+              - for (let i = 0; i < FLAMES; ++i)
+                .fire__flame
+          .engine.engine--right
+            - for (let i = 0; i < SEGMENTS; ++i)
+              .engine__segment
+            .fire.fire--right
+              - for (let i = 0; i < FLAMES; ++i)
+                .fire__flame

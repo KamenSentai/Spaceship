@@ -1,0 +1,88 @@
+.fuselage {
+
+  &--top,
+  &--bottom {
+    position: relative;
+    transform-origin: 0 $sizeSpaceship * -1;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -$sizeSpaceship;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: $sizeSpaceship $sizeSpaceship / 2 $sizeSpaceship $sizeSpaceship / 2;
+    }
+
+    &::before {
+      right: 0;
+      transform-origin: 100% 0;
+    }
+
+    &::after {
+      left: 0;
+      transform-origin: 0 0;
+    }
+  }
+
+  &--top {
+    transform: rotateX(#{$angleFuselageSide});
+
+    &::before {
+      transform: rotateY(-#{$angleWing});
+      border-color: transparent darken($color, 5%) darken($color, 5%) transparent;
+    }
+
+    &::after {
+      transform: rotateY(#{$angleWing});
+      border-color: transparent transparent darken($color, 0%) darken($color, 0%);
+    }
+  }
+
+  &--bottom {
+    transform: rotateX(-#{$angleFuselageSide});
+
+    &::before {
+      transform: rotateY(#{$angleWing});
+      border-color: transparent darken($color, 10%) darken($color, 10%) transparent;
+    }
+
+    &::after {
+      transform: rotateY(-#{$angleWing});
+      border-color: transparent transparent darken($color, 5%) darken($color, 5%);
+    }
+  }
+
+  &--back {
+    position: absolute;
+    top: $sizeSpaceship;
+    transform-origin: 0 0;
+    transform: rotateX(90deg);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -$widthBack;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    &::before {
+      right: 0;
+      border-width: $widthBack $heightBack $widthBack 0;
+      border-color: transparent darken($color, 0%) transparent transparent;
+      transform: rotateY(-#{$angleFuselageBack}) translateX(1px);
+    }
+
+    &::after {
+      left: 0;
+      border-width: $widthBack 0 $widthBack $heightBack;
+      border-color: transparent transparent transparent darken($color, 10%);
+      transform: rotateY(#{$angleFuselageBack}) translateX(-1px);
+    }
+  }
+}

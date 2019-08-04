@@ -1,0 +1,97 @@
+$color: #808080;
+$sizeSpaceship: 250px;
+$angleFuselageSide: 14deg;
+$angleFuselageBack: 8deg;
+$angleWing: 30deg;
+$heightBack: 219px;
+$widthBack: 121px;
+$sizeBasement: 25px;
+$sizeCockpit: 100px;
+$angleCockpit: 98.5deg;
+$totalSegments: 16;
+$sizeMuzzle: 1px;
+$radiusCanon: 10px;
+$sizeCanonSegments: $radiusCanon / 10;
+$radiusLaser: 1px;
+$sizeLaserSegments: $radiusLaser;
+$radiusEngine: 125px;
+$sizeEngineSegments: $radiusEngine / 10;
+$distanceFire: 12.5px;
+$gradientEngine: linear-gradient(
+  to bottom,
+  hsl(0, 100%, 50%) 0%,
+  hsl(0, 100%, 50.64%) 4.05%,
+  hsl(0, 100%, 52.43%) 7.5%,
+  hsl(0, 100%, 55.2%) 11.25%,
+  hsl(0, 100%, 58.77%) 14.5%,
+  hsl(0, 100%, 62.96%) 17.65%,
+  hsl(0, 100%, 67.6%) 20.6%,
+  hsl(0, 100%, 72.5%) 23.55%,
+  hsl(0, 100%, 77.5%) 26.45%,
+  hsl(0, 100%, 82.4%) 29.4%,
+  hsl(0, 100%, 87.04%) 32.35%,
+  hsl(0, 100%, 91.23%) 35.5%,
+  hsl(0, 100%, 94.8%) 38.75%,
+  hsl(0, 100%, 97.57%) 42.25%,
+  hsl(0, 100%, 99.36%) 45.95%,
+  hsl(0, 0%, 100%) 50%,
+  hsl(0, 100%, 99.36%) 54.05%,
+  hsl(0, 100%, 97.57%) 57.5%,
+  hsl(0, 100%, 94.8%) 61.25%,
+  hsl(0, 100%, 91.23%) 64.5%,
+  hsl(0, 100%, 87.04%) 67.65%,
+  hsl(0, 100%, 82.4%) 70.6%,
+  hsl(0, 100%, 77.5%) 73.55%,
+  hsl(0, 100%, 72.5%) 76.45%,
+  hsl(0, 100%, 67.6%) 79.4%,
+  hsl(0, 100%, 62.96%) 82.35%,
+  hsl(0, 100%, 58.77%) 85.5%,
+  hsl(0, 100%, 55.2%) 88.75%,
+  hsl(0, 100%, 52.43%) 92.25%,
+  hsl(0, 100%, 50.64%) 95.95%,
+  hsl(0, 100%, 50%) 100%
+);
+$gradientFire: linear-gradient(
+  to left,
+  hsl(0, 100%, 50%) 0%,
+  hsl(6.32, 100%, 50%) 8.1%,
+  hsl(12.34, 100%, 50%) 15.5%,
+  hsl(18.06, 100%, 50%) 22.5%,
+  hsl(23.45, 100%, 50%) 29%,
+  hsl(28.51, 100%, 50%) 35.3%,
+  hsl(33.22, 100%, 50%) 41.2%,
+  hsl(37.57, 100%, 50%) 47.1%,
+  hsl(41.53, 100%, 50%) 52.9%,
+  hsl(45.08, 100%, 50%) 58.8%,
+  hsl(48.2, 100%, 50%) 64.7%,
+  hsl(50.85, 100%, 50%) 71%,
+  hsl(53.01, 100%, 50%) 77.5%,
+  hsl(54.62, 100%, 50%) 84.5%,
+  hsl(55.64, 100%, 50%) 91.9%,
+  hsl(56, 100%, 50%) 100%
+);
+$heightsWalls: (
+  a: 15px,
+  b: 13px,
+  c: 11px,
+  d: 10px,
+  e: 9px,
+  f: 8px,
+  g: 7px,
+  h: 7px,
+  i: 7px,
+  j: 8px,
+  k: 9px,
+  l: 10px,
+  m: 11px,
+  n: 13px,
+  o: 15px,
+  p: 15px
+);
+$heightsFires: (
+  a: 62.5px,
+  b: 50px,
+  c: 37.5px,
+  d: 25px,
+  e: 12.5px
+);

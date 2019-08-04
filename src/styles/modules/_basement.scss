@@ -1,0 +1,129 @@
+.basement {
+  $root: &;
+
+  position: absolute;
+  top: calc(#{$sizeSpaceship} - #{$sizeBasement});
+
+  &__part,
+  &__closure,
+  &__cockpit {
+    position: absolute;
+  }
+
+  &__part {
+    &--left,
+    &--right {
+      height: $sizeBasement;
+      width: $sizeBasement * 5;
+      transform-origin: 0 50%;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-origin: 0 0;
+      }
+
+      &::before {
+        background-color: darken($color, 7.5%);
+        transform: skewX(-#{$angleWing});
+      }
+
+      &::after {
+        background-color: darken($color, 2.5%);
+      }
+    }
+
+    &--left {
+      transform: scale(-1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+
+      &::after {
+        transform: skewX(-#{$angleWing}) translateZ(-#{$sizeBasement * 5});
+      }
+
+      #{$root}__closure {
+        background-color: darken($color, 10%);
+        transform: rotateY(-90deg) rotateX(#{$angleWing});
+
+        &::before {
+          background-color: darken($color, 5%);
+          transform: rotateX(#{$angleWing * 2});
+        }
+      }
+
+      #{$root}__cockpit {
+        transform:
+          translateZ(-#{$sizeBasement * 5})
+          rotateZ(#{$angleWing})
+          translateY(#{$sizeBasement / cos($angleWing)});
+
+          &::before {
+            transform: rotateZ(-#{$angleWing * 2}) rotateX(-#{$angleCockpit});
+          }
+        ;
+      }
+    }
+
+    &--right {
+      transform: scale(1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+
+      &::after {
+        transform: skewX(-#{$angleWing}) translateZ(#{$sizeBasement * 5});
+      }
+
+      #{$root}__closure {
+        background-color: darken($color, 5%);
+        transform: rotateY(90deg) rotateX(-#{$angleWing});
+
+        &::before {
+          background-color: darken($color, 0%);
+          transform: rotateX(-#{$angleWing * 2});
+        }
+      }
+
+      #{$root}__cockpit {
+        transform:
+          translateZ(#{$sizeBasement * 5})
+          rotateZ(#{$angleWing})
+          translateY(#{$sizeBasement / cos($angleWing)});
+
+          &::before {
+            transform: rotateZ(-#{$angleWing * 2}) rotateX(#{$angleCockpit});
+          }
+        ;
+      }
+    }
+  }
+
+
+  &__closure {
+    height: $sizeBasement / cos($angleWing);
+    width: 100%;
+    transform-origin: 100% 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      height: $sizeBasement * 5;
+      width: 100%;
+      transform-origin: 0 0;
+    }
+  }
+
+  &__cockpit{
+    transform-origin: 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: $sizeCockpit $sizeBasement 0 $sizeBasement;
+      border-color: red transparent transparent transparent;
+      transform-origin: 0 0;
+      opacity: .5;
+    }
+  }
+}
