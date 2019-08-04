@@ -8,12 +8,18 @@
  * @class Laser
  */
 class Laser {
+  /**
+   * Construct
+   */
   constructor() {
     this.laser = document.querySelector('.laser')
     this.state = 'isShot'
     this.isShooting = false
   }
 
+  /**
+   * Initialize
+   */
   init() {
     window.addEventListener('keydown', (event) => {
       if (event.keyCode === 32 && !this.isShooting) {
