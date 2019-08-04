@@ -9,7 +9,7 @@
       #{$root}__segment {
         &:nth-child(#{index($heightsWalls, $index)}) {
           @include ba {
-            height: 8px;
+            height: $sizeMiniEngine;
           }
         }
       }
@@ -19,7 +19,7 @@
   &--left{
     transform:
       scale(.5)
-      translate3d(-#{$radiusEngine * 2}, 0, -10px)
+      translate3d(-#{$radiusEngine * 2}, 0, -#{$distanceMiniEngine})
       rotateY(-#{$angleFuselageBack / 2})
     ;
   }
@@ -27,7 +27,7 @@
   &--right{
     transform:
       scale(.5)
-      translate3d(#{$radiusEngine * 2}, 0, -10px)
+      translate3d(#{$radiusEngine * 2}, 0, -#{$distanceMiniEngine})
       rotateY(#{$angleFuselageBack / 2})
     ;
   }

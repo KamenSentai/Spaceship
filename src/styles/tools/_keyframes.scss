@@ -3,10 +3,10 @@
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-25px);
+    transform: translateY(-#{$distanceNavigation});
   }
   75% {
-    transform: translateY(25px);
+    transform: translateY(#{$distanceNavigation});
   }
   100% {
     transform: translateY(0);

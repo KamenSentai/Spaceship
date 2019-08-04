@@ -1,7 +1,7 @@
 .laser {
   position: absolute;
   top: $radiusCanon / 2;
-  left: $radiusCanon / 2 - .5px;
+  left: $radiusCanon / 2 - $radiusLaser / 2;
   transition: transform 1s ease-in-out;
   transform: translateZ(0);
   will-change: transform;
@@ -12,8 +12,8 @@
 
   &__segment {
     position: absolute;
-    top: -.5px;
-    left: -.5px;
+    top: -$radiusLaser / 2;
+    left: -$radiusLaser / 2;
     height: $radiusLaser;
     width: $sizeLaserSegments;
 
