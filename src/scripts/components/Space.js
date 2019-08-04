@@ -102,7 +102,7 @@ class Space {
         star.y = mod(y - position.y * (DEPTH  - z) / REDUCER, width)
       })
 
-      // window.requestAnimationFrame(loop)
+      window.requestAnimationFrame(loop)
     }
     loop()
   }

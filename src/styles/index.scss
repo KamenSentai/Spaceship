@@ -1,9 +1,11 @@
 @import './tools/variables';
 @import './tools/functions';
+@import './tools/keyframes';
 @import './tools/mixins';
 @import './bases/general';
 @import './modules/canvas';
-@import './modules/starship';
+@import './modules/area';
+@import './modules/spaceship';
 @import './modules/fuselage';
 @import './modules/basement';
 @import './modules/engine';
