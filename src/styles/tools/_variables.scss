@@ -12,6 +12,8 @@ $totalSegments: 16;
 $sizeMuzzle: 1px;
 $radiusCanon: 10px;
 $sizeCanonSegments: $radiusCanon / 10;
+$radiusLaser: 1px;
+$sizeLaserSegments: $radiusLaser;
 $radiusEngine: 125px;
 $sizeEngineSegments: $radiusEngine / 10;
 $distanceFire: 12.5px;

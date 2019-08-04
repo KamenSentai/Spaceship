@@ -1,0 +1,49 @@
+.laser {
+  position: absolute;
+  top: $radiusCanon / 2;
+  left: $radiusCanon / 2 - .5px;
+  transition: transform 1s ease-in-out;
+  transform: translateZ(0);
+  will-change: transform;
+
+  &.isShot {
+    transform: translateZ(#{$sizeSpaceship * 10});
+  }
+
+  &__segment {
+    position: absolute;
+    top: -.5px;
+    left: -.5px;
+    height: $radiusLaser;
+    width: $sizeLaserSegments;
+
+    @for $i from 0 to $totalSegments {
+      &:nth-child(#{$i}) {
+        transform: rotateZ(#{$i / ($totalSegments * 2)}turn);
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: $radiusCanon * 5;
+      width: 100%;
+      background-color: red;
+      opacity: .125;
+      transform-origin: 0 0;
+    }
+
+    &::before {
+      top: 100%;
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0%;
+    }
+
+    &::after {
+      bottom: 100%;
+      transform: rotateX(90deg);
+      transform-origin: 50% 100%;
+    }
+  }
+}

@@ -19,7 +19,7 @@
       &:nth-child(#{index($heightsFires, $index $height)}) {
         height: $height;
         width: $height * 2;
-        // animation: flaming #{index($heightsFires, $index $height) * .125s} ease-in-out infinite;
+        animation: flaming #{index($heightsFires, $index $height) * .125s} ease-in-out infinite;
       }
     }
   }

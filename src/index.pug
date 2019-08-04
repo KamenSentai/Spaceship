@@ -22,6 +22,9 @@ html(lang='en')
           .canon
             - for (let i = 0; i < SEGMENTS; ++i)
               .canon__segment
+            .laser
+              - for (let i = 0; i < SEGMENTS; ++i)
+                .laser__segment
         .fuselage.fuselage--back
           .engine.engine--center
             - for (let i = 0; i < SEGMENTS; ++i)
