@@ -30,7 +30,7 @@ class Grabber {
    */
   init() {
     const { scale, rotate } = this
-    const RAD = Math.PI / 180
+    const RADIAN = 180 / Math.PI
 
     window.addEventListener('wheel', (event) => {
       const { deltaY } = event
@@ -55,8 +55,8 @@ class Grabber {
         const { movementX, movementY } = event
 
         rotate.x -= movementY
-        rotate.y += movementX * Math.cos(rotate.x * RAD)
-        rotate.z -= movementX * Math.sin(rotate.x * RAD) * Math.cos(rotate.y * RAD)
+        rotate.y += movementX * Math.cos(rotate.x / RADIAN)
+        rotate.z -= movementX * Math.sin(rotate.x / RADIAN) * Math.cos(rotate.y / RADIAN)
 
         this.update()
       }
