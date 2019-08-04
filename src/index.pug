@@ -1,6 +1,6 @@
 - const SIDES = ['left', 'right']
-- const ENGINE_SEGMENTS = 16
-- const FIRE_FLAMES = 5
+- const SEGMENTS = 16
+- const FLAMES = 5
 doctype html
 html(lang='en')
   head
@@ -19,22 +19,25 @@ html(lang='en')
                 .basement__closure
                 .basement__cockpit
         .fuselage.fuselage--bottom
+          .canon
+            - for (let i = 0; i < SEGMENTS; ++i)
+              .canon__segment
         .fuselage.fuselage--back
           .engine.engine--center
-            - for (let i = 0; i < ENGINE_SEGMENTS; ++i)
+            - for (let i = 0; i < SEGMENTS; ++i)
               .engine__segment
             .fire
-              - for (let i = 0; i < FIRE_FLAMES; ++i)
+              - for (let i = 0; i < FLAMES; ++i)
                 .fire__flame
           .engine.engine--left
-            - for (let i = 0; i < ENGINE_SEGMENTS; ++i)
+            - for (let i = 0; i < SEGMENTS; ++i)
               .engine__segment
             .fire.fire--left
-              - for (let i = 0; i < FIRE_FLAMES; ++i)
+              - for (let i = 0; i < FLAMES; ++i)
                 .fire__flame
           .engine.engine--right
-            - for (let i = 0; i < ENGINE_SEGMENTS; ++i)
+            - for (let i = 0; i < SEGMENTS; ++i)
               .engine__segment
             .fire.fire--right
-              - for (let i = 0; i < FIRE_FLAMES; ++i)
+              - for (let i = 0; i < FLAMES; ++i)
                 .fire__flame
