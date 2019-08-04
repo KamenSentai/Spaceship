@@ -2,7 +2,6 @@
   $root: &;
 
   position: absolute;
-  transform-style: preserve-3d;
 
   &--left,
   &--right {
@@ -53,7 +52,6 @@
     width: $sizeSegments;
     background: $engineGradient;
     transform-origin: 50% 50%;
-    transform-style: preserve-3d;
 
     @for $i from 0 to $totalEngineSegments {
       &:nth-child(#{$i}) {

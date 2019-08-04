@@ -20,3 +20,7 @@ body {
     cursor: grabbing;
   }
 }
+
+*  {
+  transform-style: preserve-3d;
+}
