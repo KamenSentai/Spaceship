@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: Path.join(__dirname, '../build'),
-    filename: 'js/[name].js'
+    filename: 'scripts/[name].js'
   },
   optimization: {
     splitChunks: {
@@ -23,7 +23,7 @@ module.exports = {
       { from: Path.resolve(__dirname, '../public'), to: 'public' }
     ]),
     new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html')
+      template: Path.resolve(__dirname, '../src/index.pug')
     })
   ],
   resolve: {
@@ -33,6 +33,12 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        use: {
+          loader: 'pug-loader'
+        }
+      },
       {
         test: /\.mjs$/,
         include: /node_modules/,
