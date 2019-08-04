@@ -4,9 +4,13 @@
   position: absolute;
   top: calc(#{$sizeSpaceship} - #{$sizeBasement});
 
-  &__part {
+  &__part,
+  &__closure,
+  &__cockpit {
     position: absolute;
+  }
 
+  &__part {
     &--left,
     &--right {
       height: $sizeBasement;
@@ -23,12 +27,12 @@
       }
 
       &::before {
-        background-color: darken(white, 7.5%);
+        background-color: darken($color, 7.5%);
         transform: skewX(-#{$angleWing});
       }
 
       &::after {
-        background-color: darken(white, 2.5%);
+        background-color: darken($color, 2.5%);
       }
     }
 
@@ -40,13 +44,25 @@
       }
 
       #{$root}__closure {
-        background-color: darken(white, 10%);
+        background-color: darken($color, 10%);
         transform: rotateY(-90deg) rotateX(#{$angleWing});
 
         &::before {
-          background-color: darken(white, 5%);
+          background-color: darken($color, 5%);
           transform: rotateX(#{$angleWing * 2});
         }
+      }
+
+      #{$root}__cockpit {
+        transform:
+          translateZ(-#{$sizeBasement * 5})
+          rotateZ(#{$angleWing})
+          translateY(#{$sizeBasement / cos($angleWing)});
+
+          &::before {
+            transform: rotateZ(-#{$angleWing * 2}) rotateX(-#{$angleCockpit});
+          }
+        ;
       }
     }
 
@@ -58,21 +74,32 @@
       }
 
       #{$root}__closure {
-        background-color: darken(white, 5%);
+        background-color: darken($color, 5%);
         transform: rotateY(90deg) rotateX(-#{$angleWing});
 
         &::before {
-          background-color: darken(white, 0%);
+          background-color: darken($color, 0%);
           transform: rotateX(-#{$angleWing * 2});
         }
+      }
+
+      #{$root}__cockpit {
+        transform:
+          translateZ(#{$sizeBasement * 5})
+          rotateZ(#{$angleWing})
+          translateY(#{$sizeBasement / cos($angleWing)});
+
+          &::before {
+            transform: rotateZ(-#{$angleWing * 2}) rotateX(#{$angleCockpit});
+          }
+        ;
       }
     }
   }
 
 
   &__closure {
-    position: absolute;
-    height: calc(#{$sizeBasement} / #{cos($angleWing)});
+    height: $sizeBasement / cos($angleWing);
     width: 100%;
     transform-origin: 100% 0;
 
@@ -83,6 +110,20 @@
       height: $sizeBasement * 5;
       width: 100%;
       transform-origin: 0 0;
+    }
+  }
+
+  &__cockpit{
+    transform-origin: 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: $sizeCockpit $sizeBasement 0 $sizeBasement;
+      border-color: red transparent transparent transparent;
+      transform-origin: 0 0;
+      opacity: .5;
     }
   }
 }

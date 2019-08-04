@@ -32,12 +32,12 @@
 
     &::before {
       transform: rotateY(-#{$angleWing});
-      border-color: transparent darken(white, 5%) darken(white, 5%) transparent;
+      border-color: transparent darken($color, 5%) darken($color, 5%) transparent;
     }
 
     &::after {
       transform: rotateY(#{$angleWing});
-      border-color: transparent transparent darken(white, 0%) darken(white, 0%);
+      border-color: transparent transparent darken($color, 0%) darken($color, 0%);
     }
   }
 
@@ -46,12 +46,12 @@
 
     &::before {
       transform: rotateY(#{$angleWing});
-      border-color: transparent darken(white, 10%) darken(white, 10%) transparent;
+      border-color: transparent darken($color, 10%) darken($color, 10%) transparent;
     }
 
     &::after {
       transform: rotateY(-#{$angleWing});
-      border-color: transparent transparent darken(white, 5%) darken(white, 5%);
+      border-color: transparent transparent darken($color, 5%) darken($color, 5%);
     }
   }
 
@@ -74,14 +74,14 @@
     &::before {
       right: 0;
       border-width: $widthBack $heightBack $widthBack 0;
-      border-color: transparent darken(white, 0%) transparent transparent;
+      border-color: transparent darken($color, 0%) transparent transparent;
       transform: rotateY(-#{$angleFuselageBack}) translateX(1px);
     }
 
     &::after {
       left: 0;
       border-width: $widthBack 0 $widthBack $heightBack;
-      border-color: transparent transparent transparent darken(white, 10%);
+      border-color: transparent transparent transparent darken($color, 10%);
       transform: rotateY(#{$angleFuselageBack}) translateX(-1px);
     }
   }
