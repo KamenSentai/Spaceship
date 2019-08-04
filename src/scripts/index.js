@@ -7,5 +7,5 @@ import Space from './components/Space'
 
 /* Initialization */
 
-new Grabber('.spaceship').init()
+new Grabber('.area').init()
 new Space().init()
