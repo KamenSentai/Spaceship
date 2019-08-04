@@ -1,3 +1,4 @@
+$color: #808080;
 $sizeSpaceship: 250px;
 $angleFuselageSide: 14deg;
 $angleFuselageBack: 8deg;
@@ -5,6 +6,8 @@ $angleWing: 30deg;
 $heightBack: 219px;
 $widthBack: 121px;
 $sizeBasement: 25px;
+$sizeCockpit: 100px;
+$angleCockpit: 98.5deg;
 $radiusEngine: 125px;
 $sizeSegments: $radiusEngine / 10;
 $totalEngineSegments: 16;

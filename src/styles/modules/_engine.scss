@@ -64,7 +64,7 @@
       content: "";
       position: absolute;
       width: 100%;
-      background-color: darken(white, 50%);
+      background-color: darken($color, 50%);
     }
 
     &::before {
