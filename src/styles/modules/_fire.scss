@@ -1,11 +1,19 @@
 .fire {
   position: absolute;
   transform-origin: 0 0;
-  transform: translateZ(-#{$distanceFire}) rotateY(90deg) skewX(45deg);
+  transform:
+    translateZ(-#{$distanceFire})
+    rotateY(90deg)
+    skewX(45deg)
+  ;
 
   &--left,
   &--right {
-    transform: translateZ(-#{$distanceFire}) rotateY(90deg) skewX(22.5deg);
+    transform:
+      translateZ(-#{$distanceFire})
+      rotateY(90deg)
+      skewX(22.5deg)
+    ;
   }
 
   &__flame {
