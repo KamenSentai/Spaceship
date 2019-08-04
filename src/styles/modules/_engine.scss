@@ -47,15 +47,15 @@
   &__segment {
     position: absolute;
     top: -$radiusEngine / 2;
-    left: -$sizeSegments / 2;
+    left: -$sizeEngineSegments / 2;
     height: $radiusEngine;
-    width: $sizeSegments;
+    width: $sizeEngineSegments;
     background: $gradientEngine;
     transform-origin: 50% 50%;
 
-    @for $i from 0 to $totalEngineSegments {
+    @for $i from 0 to $totalSegments {
       &:nth-child(#{$i}) {
-        transform: rotateZ(#{$i / ($totalEngineSegments * 2)}turn);
+        transform: rotateZ(#{$i / ($totalSegments * 2)}turn);
       }
     }
 

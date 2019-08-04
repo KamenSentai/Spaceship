@@ -8,9 +8,12 @@ $widthBack: 121px;
 $sizeBasement: 25px;
 $sizeCockpit: 100px;
 $angleCockpit: 98.5deg;
+$totalSegments: 16;
+$sizeMuzzle: 1px;
+$radiusCanon: 10px;
+$sizeCanonSegments: $radiusCanon / 10;
 $radiusEngine: 125px;
-$sizeSegments: $radiusEngine / 10;
-$totalEngineSegments: 16;
+$sizeEngineSegments: $radiusEngine / 10;
 $distanceFire: 12.5px;
 $gradientEngine: linear-gradient(
   to bottom,
