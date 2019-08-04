@@ -75,14 +75,20 @@
       right: 0;
       border-width: $widthBack $heightBack $widthBack 0;
       border-color: transparent darken($color, 0%) transparent transparent;
-      transform: rotateY(-#{$angleFuselageBack}) translateX(1px);
+      transform:
+        rotateY(-#{$angleFuselageBack})
+        translateX(#{$sizeFixFuselageBack})
+      ;
     }
 
     &::after {
       left: 0;
       border-width: $widthBack 0 $widthBack $heightBack;
       border-color: transparent transparent transparent darken($color, 10%);
-      transform: rotateY(#{$angleFuselageBack}) translateX(-1px);
+      transform:
+        rotateY(#{$angleFuselageBack})
+        translateX(-#{$sizeFixFuselageBack})
+      ;
     }
   }
 }

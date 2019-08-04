@@ -7,9 +7,11 @@
   transform-origin: 0 0;
   transform:
     rotateX(#{$angleFuselageSide + 90deg})
-    translateX(-#{$sizeCanonSegments / 2 + $radiusCanon / 2})
-    translateY(-#{$radiusCanon})
-    translateZ(#{$radiusCanon * 2.5})
+    translate3d(
+      -#{$sizeCanonSegments / 2 + $radiusCanon / 2},
+      -#{$radiusCanon},
+      #{$radiusCanon * 2.5}
+    )
   ;
 
   &::before {

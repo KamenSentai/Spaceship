@@ -1,7 +1,9 @@
 $color: #808080;
 $sizeSpaceship: 250px;
+$distanceNavigation: 25px;
 $angleFuselageSide: 14deg;
 $angleFuselageBack: 8deg;
+$sizeFixFuselageBack: 1px;
 $angleWing: 30deg;
 $heightBack: 219px;
 $widthBack: 121px;
@@ -14,8 +16,10 @@ $radiusCanon: 10px;
 $sizeCanonSegments: $radiusCanon / 10;
 $radiusLaser: 1px;
 $sizeLaserSegments: $radiusLaser;
+$sizeMiniEngine: 8px;
 $radiusEngine: 125px;
 $sizeEngineSegments: $radiusEngine / 10;
+$distanceMiniEngine: 10px;
 $distanceFire: 12.5px;
 $gradientEngine: linear-gradient(
   to bottom,

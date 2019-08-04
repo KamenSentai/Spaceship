@@ -37,15 +37,26 @@
     }
 
     &--left {
-      transform: scale(-1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+      transform:
+        scale(-1)
+        rotateY(#{$angleWing})
+        rotateX(90deg)
+        translateY(#{$sizeBasement / 2})
+      ;
 
       &::after {
-        transform: skewX(-#{$angleWing}) translateZ(-#{$sizeBasement * 5});
+        transform:
+          skewX(-#{$angleWing})
+          translateZ(-#{$sizeBasement * 5})
+        ;
       }
 
       #{$root}__closure {
         background-color: darken($color, 10%);
-        transform: rotateY(-90deg) rotateX(#{$angleWing});
+        transform:
+          rotateY(-90deg)
+          rotateX(#{$angleWing})
+        ;
 
         &::before {
           background-color: darken($color, 5%);
@@ -57,25 +68,39 @@
         transform:
           translateZ(-#{$sizeBasement * 5})
           rotateZ(#{$angleWing})
-          translateY(#{$sizeBasement / cos($angleWing)});
-
-          &::before {
-            transform: rotateZ(-#{$angleWing * 2}) rotateX(-#{$angleCockpit});
-          }
+          translateY(#{$sizeBasement / cos($angleWing)})
         ;
+
+        &::before {
+          transform:
+            rotateZ(-#{$angleWing * 2})
+            rotateX(-#{$angleCockpit})
+          ;
+        }
       }
     }
 
     &--right {
-      transform: scale(1) rotateY(#{$angleWing}) rotateX(90deg) translateY(#{$sizeBasement / 2});
+      transform:
+        scale(1)
+        rotateY(#{$angleWing})
+        rotateX(90deg)
+        translateY(#{$sizeBasement / 2})
+      ;
 
       &::after {
-        transform: skewX(-#{$angleWing}) translateZ(#{$sizeBasement * 5});
+        transform:
+          skewX(-#{$angleWing})
+          translateZ(#{$sizeBasement * 5})
+        ;
       }
 
       #{$root}__closure {
         background-color: darken($color, 5%);
-        transform: rotateY(90deg) rotateX(-#{$angleWing});
+        transform:
+          rotateY(90deg)
+          rotateX(-#{$angleWing})
+        ;
 
         &::before {
           background-color: darken($color, 0%);
@@ -87,12 +112,15 @@
         transform:
           translateZ(#{$sizeBasement * 5})
           rotateZ(#{$angleWing})
-          translateY(#{$sizeBasement / cos($angleWing)});
-
-          &::before {
-            transform: rotateZ(-#{$angleWing * 2}) rotateX(#{$angleCockpit});
-          }
+          translateY(#{$sizeBasement / cos($angleWing)})
         ;
+
+        &::before {
+          transform:
+            rotateZ(-#{$angleWing * 2})
+            rotateX(#{$angleCockpit})
+          ;
+        }
       }
     }
   }
