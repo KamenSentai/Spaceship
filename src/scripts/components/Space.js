@@ -30,11 +30,12 @@ class Space {
   }
 
   resizeCanvas() {
-    const { canvas } = this
+    const { canvas, context } = this
 
     const resize = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
+      context.fillStyle = 'white'
     }
     resize()
 
@@ -94,12 +95,12 @@ class Space {
         const { x, y, z } = star
 
         context.beginPath()
-        context.arc(star.x, star.y, 1, 0, TAU, false)
+        context.arc(x, y, 1, 0, TAU, false)
         context.fill()
         context.closePath()
 
-        star.x = mod(x - position.x * (DEPTH  - z) / REDUCER, width)
-        star.y = mod(y - position.y * (DEPTH  - z) / REDUCER, width)
+        star.x = mod(x - position.x * (DEPTH - z) / REDUCER, width)
+        star.y = mod(y - position.y * (DEPTH - z) / REDUCER, width)
       })
 
       window.requestAnimationFrame(loop)
