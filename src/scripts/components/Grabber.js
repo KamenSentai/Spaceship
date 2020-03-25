@@ -1,5 +1,5 @@
 /**
- * @author Alain Cao Van Tuong <contact@alain-caovantruong.fr>
+ * @author Alain Cao Van Tuong <contact@alaincaovantruong.com>
  */
 
 /* Definition */
